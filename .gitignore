@@ -1,0 +1,38 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+*.log
+debug_output.txt
+out.txt
+out2.txt
+out3.txt
+out3_utf8.txt
+out4.txt
+out4_utf8.txt
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# App Data / Caches
+backend/uploads/
+crop_calendar_cache.json
+frontend/node_modules/

@@ -1,0 +1,665 @@
+[
+  {
+    "id": "pm_kisan",
+    "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "short": "₹6,000/year direct income support",
+    "category": "income_support",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "₹6,000 per year in three equal installments of ₹2,000 each, directly to bank account.",
+    "apply_url": "https://pmkisan.gov.in",
+    "apply_steps": [
+      "Visit pmkisan.gov.in or local CSC",
+      "Register with Aadhaar, land records, and bank details",
+      "Verify through local Patwari/lekhpal"
+    ],
+    "tags": [
+      "income",
+      "direct-benefit",
+      "small-farmer"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "pmfby",
+    "name": "PM Fasal Bima Yojana (PMFBY)",
+    "short": "Crop insurance at very low premium",
+    "category": "insurance",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Comprehensive crop insurance against natural calamities, pests, and diseases. Premium: 2% for Kharif, 1.5% for Rabi, 5% for commercial/horticultural crops.",
+    "apply_url": "https://pmfby.gov.in",
+    "apply_steps": [
+      "Apply through your bank (if loanee farmer, auto-enrolled)",
+      "Non-loanee: visit CSC or pmfby.gov.in",
+      "Submit crop sowing certificate and land records"
+    ],
+    "tags": [
+      "insurance",
+      "disaster",
+      "crop-loss",
+      "disease"
+    ],
+    "urgency_when": [
+      "disease_severe",
+      "crop_loss",
+      "natural_disaster"
+    ]
+  },
+  {
+    "id": "kcc",
+    "name": "Kisan Credit Card (KCC)",
+    "short": "Low-interest farm loans up to ₹3 lakh",
+    "category": "credit",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Short-term credit at 4% interest (with subvention). Credit limit based on land holding and crop. Includes personal accident insurance cover of ₹50,000.",
+    "apply_url": "https://www.pmjdy.gov.in",
+    "apply_steps": [
+      "Visit any commercial bank, cooperative, or RRB",
+      "Submit Aadhaar, land records, and passport photo",
+      "Credit limit sanctioned based on land and crop pattern"
+    ],
+    "tags": [
+      "credit",
+      "loan",
+      "input-purchase",
+      "seeds",
+      "fertilizer"
+    ],
+    "urgency_when": [
+      "need_inputs",
+      "season_start"
+    ]
+  },
+  {
+    "id": "soil_health",
+    "name": "Soil Health Card Scheme",
+    "short": "Free soil testing + fertilizer advice",
+    "category": "advisory",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Free soil testing every 2 years. Crop-wise fertilizer recommendations. Helps reduce input costs by 10-15%.",
+    "apply_url": "https://soilhealth.dac.gov.in",
+    "apply_steps": [
+      "Contact local agriculture department",
+      "Soil sample collected from your field",
+      "Card issued with nutrient status and recommendations"
+    ],
+    "tags": [
+      "soil",
+      "advisory",
+      "fertilizer",
+      "free-service"
+    ],
+    "urgency_when": [
+      "nutrient_deficiency"
+    ]
+  },
+  {
+    "id": "pmksy",
+    "name": "PM Krishi Sinchai Yojana (PMKSY)",
+    "short": "Subsidized micro-irrigation (drip/sprinkler)",
+    "category": "irrigation",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "55-75% subsidy on drip and sprinkler irrigation systems. Per Drop More Crop component saves 30-40% water.",
+    "apply_url": "https://pmksy.gov.in",
+    "apply_steps": [
+      "Apply through state agriculture/horticulture department",
+      "Select from empaneled drip/sprinkler suppliers",
+      "Get system installed and claim subsidy"
+    ],
+    "tags": [
+      "irrigation",
+      "water",
+      "subsidy",
+      "drip",
+      "sprinkler"
+    ],
+    "urgency_when": [
+      "drought",
+      "water_scarcity"
+    ]
+  },
+  {
+    "id": "pkvy",
+    "name": "Paramparagat Krishi Vikas Yojana (PKVY)",
+    "short": "₹50,000/ha for organic farming",
+    "category": "organic",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "₹50,000 per hectare over 3 years for organic farming adoption. Includes certification, inputs, and marketing support.",
+    "apply_url": "https://pgsindia-ncof.gov.in",
+    "apply_steps": [
+      "Form a cluster of 50+ farmers (20 ha minimum)",
+      "Register through state agriculture department",
+      "Get PGS-India organic certification"
+    ],
+    "tags": [
+      "organic",
+      "sustainable",
+      "certification",
+      "group"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "smam",
+    "name": "Sub-Mission on Agricultural Mechanization (SMAM)",
+    "short": "40-80% subsidy on farm machinery",
+    "category": "mechanization",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "40-80% subsidy on purchase of tractors, tillers, harvesters, and other farm equipment. Higher subsidy for SC/ST/small farmers.",
+    "apply_url": "https://agrimachinery.nic.in",
+    "apply_steps": [
+      "Register on agrimachinery.nic.in portal",
+      "Select equipment from approved list",
+      "Purchase and submit bills for subsidy reimbursement"
+    ],
+    "tags": [
+      "machinery",
+      "equipment",
+      "subsidy",
+      "tractor"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "nfsm",
+    "name": "National Food Security Mission (NFSM)",
+    "short": "Free/subsidized seeds & training for food crops",
+    "category": "production",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Subsidized/free improved seeds, subsidized inputs, training and demonstrations for rice, wheat, pulses, coarse cereals, and nutri-cereals.",
+    "apply_url": "https://nfsm.gov.in",
+    "apply_steps": [
+      "Contact district agriculture officer",
+      "Register as beneficiary farmer",
+      "Receive seeds and inputs at subsidized rates"
+    ],
+    "tags": [
+      "seeds",
+      "production",
+      "subsidy",
+      "training",
+      "food-crops"
+    ],
+    "urgency_when": [
+      "season_start"
+    ]
+  },
+  {
+    "id": "nmsa",
+    "name": "National Mission for Sustainable Agriculture (NMSA)",
+    "short": "Climate-resilient farming support",
+    "category": "sustainability",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Support for rainfed areas, water management, soil health. Includes climate change adaptation strategies and agroforestry promotion.",
+    "apply_url": "https://nmsa.dac.gov.in",
+    "apply_steps": [
+      "Apply through state agriculture department",
+      "Participate in watershed/rainfed area development projects",
+      "Receive inputs and training"
+    ],
+    "tags": [
+      "climate",
+      "sustainable",
+      "rainfed",
+      "watershed"
+    ],
+    "urgency_when": [
+      "drought",
+      "climate_stress"
+    ]
+  },
+  {
+    "id": "rkvy",
+    "name": "Rashtriya Krishi Vikas Yojana (RKVY-RAFTAAR)",
+    "short": "Agri-infrastructure & innovation funding",
+    "category": "infrastructure",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Project-based grants for agri-infrastructure, value chain development, and agripreneurship. Up to ₹25 lakh for agri-startups.",
+    "apply_url": "https://rkvy.nic.in",
+    "apply_steps": [
+      "Submit project proposal through state agriculture department",
+      "For startups: apply to RKVY-RAFTAAR innovation fund",
+      "Get approval and project funding"
+    ],
+    "tags": [
+      "infrastructure",
+      "startup",
+      "innovation",
+      "value-chain"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "midh",
+    "name": "Mission for Integrated Development of Horticulture (MIDH)",
+    "short": "Subsidy for fruit, vegetable & flower farming",
+    "category": "horticulture",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "40-75% subsidy on setting up polyhouses, shade nets, nurseries. Financial support for fruit/vegetable cultivation, beekeeping, and mushroom farming.",
+    "apply_url": "https://midh.gov.in",
+    "apply_steps": [
+      "Apply through state horticulture department",
+      "Select approved structure/crop pattern",
+      "Get subsidy on installation/cultivation costs"
+    ],
+    "tags": [
+      "horticulture",
+      "fruits",
+      "vegetables",
+      "polyhouse",
+      "flowers"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "pmkisan_maan_dhan",
+    "name": "PM Kisan Maan Dhan Yojana",
+    "short": "₹3,000/month pension after age 60",
+    "category": "pension",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": 5,
+    "min_land_acres": null,
+    "benefits": "₹3,000 per month pension after age 60. Government matches farmer's monthly contribution (₹55-200 based on entry age).",
+    "apply_url": "https://maandhan.in",
+    "apply_steps": [
+      "Visit nearest CSC with Aadhaar and bank details",
+      "Choose monthly contribution based on age",
+      "Auto-debit from bank account"
+    ],
+    "tags": [
+      "pension",
+      "old-age",
+      "security",
+      "small-farmer"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "agri_infra_fund",
+    "name": "Agriculture Infrastructure Fund (AIF)",
+    "short": "₹2 crore loan at 3% interest for agri-infra",
+    "category": "infrastructure",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Loans up to ₹2 crore at 3% interest subvention for post-harvest infrastructure — cold storage, warehouses, grading/sorting units.",
+    "apply_url": "https://agriinfra.dac.gov.in",
+    "apply_steps": [
+      "Register on AIF portal",
+      "Submit project proposal online",
+      "Get loan sanctioned through empaneled banks"
+    ],
+    "tags": [
+      "infrastructure",
+      "cold-storage",
+      "warehouse",
+      "post-harvest",
+      "loan"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "e_nam",
+    "name": "e-NAM (National Agriculture Market)",
+    "short": "Online trading platform — better market prices",
+    "category": "market",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Sell produce online to buyers across India. Transparent bidding, better prices, and direct payment to bank account.",
+    "apply_url": "https://enam.gov.in",
+    "apply_steps": [
+      "Register on enam.gov.in with Aadhaar",
+      "Upload produce details and quality parameters",
+      "Accept best bid and get paid directly"
+    ],
+    "tags": [
+      "market",
+      "selling",
+      "price",
+      "online-trading"
+    ],
+    "urgency_when": [
+      "harvest_ready"
+    ]
+  },
+  {
+    "id": "mksp",
+    "name": "Mahila Kisan Sashaktikaran Pariyojana (MKSP)",
+    "short": "Women farmer empowerment & training",
+    "category": "women",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Training, skill development, and resources for women farmers. Covers organic farming, livestock, and non-timber forest produce.",
+    "apply_url": "https://nrlm.gov.in",
+    "apply_steps": [
+      "Contact local block/district NRLM office",
+      "Form or join a Self-Help Group (SHG)",
+      "Participate in MKSP training programs"
+    ],
+    "tags": [
+      "women",
+      "training",
+      "empowerment",
+      "SHG"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "mukhyamantri_krishi_ashirwad",
+    "name": "Mukhyamantri Krishi Ashirwad Yojana",
+    "short": "₹5,000/acre (max ₹25,000) per year",
+    "category": "income_support",
+    "states": [
+      "Jharkhand"
+    ],
+    "max_land_acres": 5,
+    "min_land_acres": null,
+    "benefits": "₹5,000 per acre per year, maximum ₹25,000 for up to 5 acres.",
+    "apply_url": "https://mmkay.jharkhand.gov.in",
+    "apply_steps": [
+      "Auto-identified from land records",
+      "Verify details through local agriculture office",
+      "Amount credited directly to bank account"
+    ],
+    "tags": [
+      "income",
+      "direct-benefit",
+      "state-scheme"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "rythu_bandhu",
+    "name": "Rythu Bandhu",
+    "short": "₹5,000/acre/season for farm inputs",
+    "category": "income_support",
+    "states": [
+      "Telangana"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "₹5,000 per acre per season for purchasing seeds, fertilizers, and other inputs.",
+    "apply_url": "https://rythubandhu.telangana.gov.in",
+    "apply_steps": [
+      "Auto-enrolled based on land ownership records",
+      "Check details on Dharani portal",
+      "Cheque/transfer issued before each crop season"
+    ],
+    "tags": [
+      "income",
+      "inputs",
+      "state-scheme",
+      "seasonal"
+    ],
+    "urgency_when": [
+      "season_start"
+    ]
+  },
+  {
+    "id": "kalia",
+    "name": "KALIA (Krushak Assistance for Livelihood and Income Augmentation)",
+    "short": "₹25,000 over 5 seasons for Odisha farmers",
+    "category": "income_support",
+    "states": [
+      "Odisha"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "₹25,000 per farm family over five seasons. Also covers landless agricultural households with ₹12,500.",
+    "apply_url": "https://kalia.odisha.gov.in",
+    "apply_steps": [
+      "Apply via Gram Panchayat or KALIA portal",
+      "Submit land and identity documents",
+      "Amount credited in seasonal installments"
+    ],
+    "tags": [
+      "income",
+      "direct-benefit",
+      "state-scheme",
+      "landless"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "ysr_rythu_bharosa",
+    "name": "YSR Rythu Bharosa",
+    "short": "₹13,500/year investment support (AP)",
+    "category": "income_support",
+    "states": [
+      "Andhra Pradesh"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "₹13,500 per year (₹7,500 from state + ₹6,000 from PM-KISAN) for investment support before Kharif season.",
+    "apply_url": "https://ysrrythubharosa.ap.gov.in",
+    "apply_steps": [
+      "Auto-enrolled through land records database",
+      "Verify Aadhaar linkage at village secretariat",
+      "Amount transferred before Kharif sowing"
+    ],
+    "tags": [
+      "income",
+      "direct-benefit",
+      "state-scheme"
+    ],
+    "urgency_when": [
+      "season_start"
+    ]
+  },
+  {
+    "id": "bhavantar_mp",
+    "name": "Bhavantar Bhugtan Yojana",
+    "short": "Price difference compensation (MP)",
+    "category": "market",
+    "states": [
+      "Madhya Pradesh"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "If market price falls below MSP, government pays the difference directly to farmers. Covers soybean, maize, moong, urad, groundnut, etc.",
+    "apply_url": "https://mpeuparjan.nic.in",
+    "apply_steps": [
+      "Register crop and acreage on e-Uparjan portal",
+      "Sell at registered mandi",
+      "Price difference credited to bank account"
+    ],
+    "tags": [
+      "market",
+      "MSP",
+      "price-support",
+      "state-scheme"
+    ],
+    "urgency_when": [
+      "harvest_ready",
+      "low_market_price"
+    ]
+  },
+  {
+    "id": "nmaet",
+    "name": "National Mission on Agricultural Extension & Technology",
+    "short": "Free training, demos & technology transfer",
+    "category": "extension",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "Free farmer training through KVKs and ATMAs. Technology demonstrations on farmer fields. Access to latest crop techniques.",
+    "apply_url": "https://extensionreforms.dacnet.nic.in",
+    "apply_steps": [
+      "Contact nearest Krishi Vigyan Kendra (KVK)",
+      "Attend training programs and field demonstrations",
+      "Get crop advisories via Kisan Call Centre (1800-180-1551)"
+    ],
+    "tags": [
+      "training",
+      "extension",
+      "technology",
+      "advisory",
+      "free"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "nadcp",
+    "name": "National Animal Disease Control Programme",
+    "short": "Free FMD & Brucellosis vaccination for cattle",
+    "category": "livestock",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "100% free vaccination for Foot & Mouth Disease (FMD) and Brucellosis for all cattle and buffalo.",
+    "apply_url": "https://nadcp.dadf.gov.in",
+    "apply_steps": [
+      "Contact local veterinary officer",
+      "Vaccination camps conducted village-wise",
+      "Ensure all animals are tagged and vaccinated"
+    ],
+    "tags": [
+      "livestock",
+      "cattle",
+      "vaccination",
+      "animal-health",
+      "free"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "pmjay_kisan",
+    "name": "PM Jeevan Jyoti Bima / Suraksha Bima (for farmers)",
+    "short": "₹2 lakh life + accident insurance at ₹342/year",
+    "category": "insurance",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "PMJJBY: ₹2 lakh life cover at ₹436/year. PMSBY: ₹2 lakh accident cover at ₹20/year. Both auto-debit from bank.",
+    "apply_url": "https://www.jansuraksha.gov.in",
+    "apply_steps": [
+      "Enroll through your bank (SMS/net banking/branch)",
+      "Premium auto-debited annually",
+      "Nominee receives ₹2 lakh in case of death/accident"
+    ],
+    "tags": [
+      "insurance",
+      "life",
+      "accident",
+      "low-premium"
+    ],
+    "urgency_when": []
+  },
+  {
+    "id": "mgnrega",
+    "name": "MGNREGA (100-Day Employment Guarantee)",
+    "short": "100 days guaranteed wage employment",
+    "category": "employment",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "100 days of guaranteed wage employment per household per year. Rural infrastructure creation — farm ponds, wells, roads.",
+    "apply_url": "https://nrega.nic.in",
+    "apply_steps": [
+      "Apply for Job Card at Gram Panchayat",
+      "Demand work in writing",
+      "Wages paid within 15 days (daily rates vary by state)"
+    ],
+    "tags": [
+      "employment",
+      "wage",
+      "rural",
+      "infrastructure",
+      "farm-pond"
+    ],
+    "urgency_when": [
+      "off_season",
+      "income_stress"
+    ]
+  },
+  {
+    "id": "micro_irrigation_fund",
+    "name": "Micro Irrigation Fund (MIF)",
+    "short": "Dedicated fund for state micro-irrigation projects",
+    "category": "irrigation",
+    "states": [
+      "All"
+    ],
+    "max_land_acres": null,
+    "min_land_acres": null,
+    "benefits": "₹5,000 crore corpus with NABARD for state-level micro-irrigation projects. Facilitates faster adoption of drip/sprinkler at subsidized rates.",
+    "apply_url": "https://pmksy.gov.in",
+    "apply_steps": [
+      "Apply through state agriculture/horticulture department",
+      "Select from empaneled suppliers",
+      "Installation + subsidy claim through department"
+    ],
+    "tags": [
+      "irrigation",
+      "drip",
+      "sprinkler",
+      "water-saving",
+      "subsidy"
+    ],
+    "urgency_when": [
+      "drought",
+      "water_scarcity"
+    ]
+  }
+]

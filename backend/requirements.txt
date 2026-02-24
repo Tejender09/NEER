@@ -1,0 +1,10 @@
+prisma
+python-dotenv
+fastapi
+uvicorn
+pydantic
+supabase
+google-genai
+mcp
+httpx
+python-multipart

@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String    @id @db.Uuid
+  phone            String?   @unique
+  name             String
+  language         String
+  village          String?
+  district         String?
+  state            String?
+  primary_crop     String?
+  land_size        Float?
+  profile_complete Boolean   @default(false)
+  joined_at        DateTime  @default(now()) @map("joined_at")
+  last_login       DateTime  @default(now()) @map("last_login")
+  history          History[]
+  calendar         Calendar?
+
+  @@map("users")
+}
+
+model Post {
+  id        String    @id @default(uuid()) @db.Uuid
+  author    String
+  author_id String    @db.Uuid
+  location  String?
+  avatar    String?
+  type      String?   // 'discussion' or 'mandi'
+  content   String
+  crop      String?   @map("target_crop")
+  price     Float?
+  image_url String?   @map("image_url")
+  likes     Int       @default(0)
+  liked_by  String[]  @default([]) @map("liked_by") @db.Uuid
+  timestamp DateTime  @default(now())
+  comments  Comment[]
+  bids      Bid[]
+
+  @@map("posts")
+}
+
+model Comment {
+  id        String   @id @default(uuid()) @db.Uuid
+  post      Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
+  post_id   String   @map("post_id") @db.Uuid
+  author    String
+  content   String
+  timestamp DateTime @default(now())
+
+  @@map("comments")
+}
+
+model Bid {
+  id        String   @id @default(uuid()) @db.Uuid
+  post      Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
+  post_id   String   @map("post_id") @db.Uuid
+  author    String
+  amount    Float
+  timestamp DateTime @default(now())
+
+  @@map("bids")
+}
+
+model History {
+  id           Int      @id @default(autoincrement())
+  user         User     @relation(fields: [user_id], references: [id])
+  user_id      String   @map("user_id") @db.Uuid
+  crop_name    String?  @map("crop_name")
+  disease_name String   @map("disease_name")
+  confidence   Float
+  treatment    String?
+  image_url    String?  @map("image_url")
+  timestamp    DateTime @default(now())
+
+  @@map("history")
+}
+
+model Calendar {
+  id            Int      @id @default(autoincrement())
+  user          User     @relation(fields: [user_id], references: [id])
+  user_id       String   @unique @map("user_id") @db.Uuid
+  state         String
+  crop          String
+  calendar_json Json     @map("calendar_json")
+  last_updated  DateTime @default(now()) @map("last_updated")
+
+  @@map("calendars")
+}

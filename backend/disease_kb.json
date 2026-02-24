@@ -1,0 +1,1084 @@
+[
+    {
+        "id": "rice_blast",
+        "disease_name": "Rice Blast",
+        "scientific_name": "Magnaporthe oryzae",
+        "crops_affected": [
+            "Rice",
+            "Paddy"
+        ],
+        "symptoms": [
+            "Diamond-shaped lesions with grey center and dark border on leaves",
+            "Lesions on nodes causing neck blast",
+            "White to grey fungal growth on lesion surface",
+            "Severely infected leaves dry out"
+        ],
+        "cause": "Fungal pathogen Magnaporthe oryzae, spread by wind-borne spores. Favored by high humidity (>90%), moderate temperatures (25-28°C), and excessive nitrogen fertilization.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Remove and destroy infected plant debris",
+            "Apply Trichoderma viride @ 4g/kg seed as seed treatment",
+            "Spray Pseudomonas fluorescens @ 5g/L water",
+            "Use neem oil spray (5ml/L) at early infection stage"
+        ],
+        "chemical_treatment": [
+            "Tricyclazole 75% WP @ 0.6g/L water (preventive spray)",
+            "Isoprothiolane 40% EC @ 1.5ml/L water",
+            "Carbendazim 50% WP @ 1g/L water"
+        ],
+        "prevention": [
+            "Use blast-resistant varieties (Pusa Basmati 1, IR64)",
+            "Avoid excessive nitrogen fertilization",
+            "Maintain proper spacing between plants",
+            "Ensure good field drainage",
+            "Treat seeds with fungicide before sowing"
+        ],
+        "common_regions": [
+            "All rice-growing states",
+            "West Bengal",
+            "Tamil Nadu",
+            "Andhra Pradesh",
+            "Punjab",
+            "Assam"
+        ]
+    },
+    {
+        "id": "rice_brown_spot",
+        "disease_name": "Brown Spot of Rice",
+        "scientific_name": "Bipolaris oryzae",
+        "crops_affected": [
+            "Rice",
+            "Paddy"
+        ],
+        "symptoms": [
+            "Oval to circular brown spots on leaves",
+            "Spots have grey or white center with brown margin",
+            "Spots may merge to form large patches",
+            "Dark brown spots on glumes causing grain discoloration"
+        ],
+        "cause": "Fungal pathogen Bipolaris oryzae (Helminthosporium oryzae). Favored by nutrient-deficient soils, especially low potassium and zinc.",
+        "severity_range": "Mild to Moderate",
+        "organic_treatment": [
+            "Improve soil nutrition with organic compost",
+            "Apply Trichoderma harzianum @ 4g/kg seed",
+            "Spray neem oil (5ml/L) at early stage",
+            "Apply zinc sulfate @ 25kg/ha to correct deficiency"
+        ],
+        "chemical_treatment": [
+            "Mancozeb 75% WP @ 2.5g/L water",
+            "Propiconazole 25% EC @ 1ml/L water",
+            "Zineb 75% WP @ 2g/L water"
+        ],
+        "prevention": [
+            "Ensure balanced fertilization (NPK + micronutrients)",
+            "Use disease-free certified seeds",
+            "Apply zinc sulfate as basal dose",
+            "Avoid water stress during critical growth stages"
+        ],
+        "common_regions": [
+            "All rice-growing states"
+        ]
+    },
+    {
+        "id": "rice_blb",
+        "disease_name": "Bacterial Leaf Blight (BLB)",
+        "scientific_name": "Xanthomonas oryzae pv. oryzae",
+        "crops_affected": [
+            "Rice",
+            "Paddy"
+        ],
+        "symptoms": [
+            "Water-soaked lesions at leaf tips and margins",
+            "Lesions turn yellow and then white as they dry",
+            "Bacterial ooze (milky droplets) on leaf surface in morning",
+            "Leaves dry up from tip downward"
+        ],
+        "cause": "Bacterial pathogen Xanthomonas oryzae. Spread through irrigation water, rain splash, and wind. Favored by warm, humid weather and high nitrogen.",
+        "severity_range": "Severe",
+        "organic_treatment": [
+            "Drain excess water from fields",
+            "Remove and burn infected plant residues",
+            "Apply neem cake @ 150kg/ha in soil",
+            "Spray Pseudomonas fluorescens @ 5g/L water"
+        ],
+        "chemical_treatment": [
+            "Streptomycin sulfate + Tetracycline (Streptocycline) @ 0.5g/L",
+            "Copper oxychloride 50% WP @ 2.5g/L water",
+            "Copper hydroxide 77% WP @ 2g/L water"
+        ],
+        "prevention": [
+            "Grow BLB-resistant varieties (Improved Sambha Mahsuri)",
+            "Avoid excess nitrogen application",
+            "Ensure proper field drainage",
+            "Clip leaf tips during transplanting to reduce inoculum spread"
+        ],
+        "common_regions": [
+            "All rice-growing states",
+            "West Bengal",
+            "Bihar",
+            "Uttar Pradesh"
+        ]
+    },
+    {
+        "id": "wheat_yellow_rust",
+        "disease_name": "Yellow Rust (Stripe Rust)",
+        "scientific_name": "Puccinia striiformis",
+        "crops_affected": [
+            "Wheat"
+        ],
+        "symptoms": [
+            "Yellow-orange pustules arranged in stripes along leaf veins",
+            "Pustules mainly on upper leaf surface",
+            "Severely infected leaves turn yellow and dry",
+            "Reduced grain filling"
+        ],
+        "cause": "Fungal pathogen Puccinia striiformis f. sp. tritici. Favored by cool temperatures (10-15°C) and high humidity. Wind-dispersed spores.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Remove volunteer wheat plants that harbor spores",
+            "Apply Trichoderma viride as soil treatment",
+            "Use neem-based formulations for early infection"
+        ],
+        "chemical_treatment": [
+            "Propiconazole 25% EC @ 1ml/L water",
+            "Tebuconazole 25% WG @ 1g/L water",
+            "Triadimefon 25% WP @ 1g/L water"
+        ],
+        "prevention": [
+            "Grow rust-resistant wheat varieties (HD-2967, DBW-187)",
+            "Avoid late sowing",
+            "Monitor fields regularly from December to February",
+            "Apply first spray at initial rust appearance"
+        ],
+        "common_regions": [
+            "Punjab",
+            "Haryana",
+            "Uttar Pradesh",
+            "Madhya Pradesh",
+            "Rajasthan"
+        ]
+    },
+    {
+        "id": "wheat_brown_rust",
+        "disease_name": "Brown Rust (Leaf Rust)",
+        "scientific_name": "Puccinia triticina",
+        "crops_affected": [
+            "Wheat"
+        ],
+        "symptoms": [
+            "Orange-brown circular pustules scattered on upper leaf surface",
+            "Pustules do not follow vein pattern (unlike stripe rust)",
+            "Leaves turn brown and dry prematurely",
+            "Reduced grain weight"
+        ],
+        "cause": "Fungal pathogen Puccinia triticina. Favored by moderate temperatures (15-22°C) and humid conditions.",
+        "severity_range": "Moderate",
+        "organic_treatment": [
+            "Practice crop rotation",
+            "Destroy volunteer wheat and grassy weeds",
+            "Apply Trichoderma-based biocontrol agents"
+        ],
+        "chemical_treatment": [
+            "Propiconazole 25% EC @ 1ml/L water",
+            "Tebuconazole + Trifloxystrobin (Nativo) @ 0.4g/L"
+        ],
+        "prevention": [
+            "Use resistant varieties",
+            "Timely sowing (avoid late planting)",
+            "Balanced fertilization"
+        ],
+        "common_regions": [
+            "Punjab",
+            "Haryana",
+            "Uttar Pradesh",
+            "Rajasthan",
+            "Bihar"
+        ]
+    },
+    {
+        "id": "tomato_early_blight",
+        "disease_name": "Early Blight",
+        "scientific_name": "Alternaria solani",
+        "crops_affected": [
+            "Tomato",
+            "Potato",
+            "Brinjal"
+        ],
+        "symptoms": [
+            "Dark brown concentric rings (target-like spots) on lower/older leaves",
+            "Yellow halo around spots",
+            "Spots enlarge and cause leaf drop starting from bottom",
+            "Dark, sunken lesions on stems and fruit"
+        ],
+        "cause": "Fungal pathogen Alternaria solani. Survives in soil and plant debris. Favored by warm (24-29°C), humid conditions and poor nutrition.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Remove and destroy lower infected leaves immediately",
+            "Apply neem oil spray (5ml/L) every 7-10 days",
+            "Spray Trichoderma viride @ 4g/L water",
+            "Apply compost tea as foliar spray"
+        ],
+        "chemical_treatment": [
+            "Mancozeb 75% WP @ 2.5g/L water",
+            "Chlorothalonil 75% WP @ 2g/L water",
+            "Azoxystrobin 23% SC @ 1ml/L water"
+        ],
+        "prevention": [
+            "Practice 2-3 year crop rotation with non-solanaceous crops",
+            "Stake tomato plants for air circulation",
+            "Avoid overhead irrigation (use drip)",
+            "Mulch around plants to prevent soil splash",
+            "Remove plant debris after harvest"
+        ],
+        "common_regions": [
+            "All tomato-growing states",
+            "Maharashtra",
+            "Karnataka",
+            "Madhya Pradesh"
+        ]
+    },
+    {
+        "id": "tomato_late_blight",
+        "disease_name": "Late Blight",
+        "scientific_name": "Phytophthora infestans",
+        "crops_affected": [
+            "Tomato",
+            "Potato"
+        ],
+        "symptoms": [
+            "Large dark, water-soaked patches on leaves",
+            "White fuzzy fungal growth on underside of leaves in humid conditions",
+            "Rapid browning and death of entire leaf",
+            "Dark greasy spots on fruits",
+            "Plants can be killed within 1-2 weeks"
+        ],
+        "cause": "Oomycete pathogen Phytophthora infestans. Thrives in cool (15-22°C), wet conditions with prolonged leaf wetness. Spreads very rapidly.",
+        "severity_range": "Severe — URGENT",
+        "organic_treatment": [
+            "Remove and destroy ALL infected plant parts immediately",
+            "Spray copper-based Bordeaux mixture (1%)",
+            "Apply Trichoderma harzianum preventively",
+            "Improve air circulation by proper spacing"
+        ],
+        "chemical_treatment": [
+            "Metalaxyl + Mancozeb (Ridomil Gold) @ 2.5g/L",
+            "Cymoxanil + Mancozeb @ 3g/L",
+            "Dimethomorph 50% WP @ 1g/L"
+        ],
+        "prevention": [
+            "Use resistant varieties (Arka Rakshak, Arka Samrat)",
+            "Avoid planting near potato fields",
+            "Ensure proper drainage",
+            "Apply preventive fungicide sprays during rainy season",
+            "Destroy infected plant debris by burning"
+        ],
+        "common_regions": [
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Nilgiris",
+            "Maharashtra",
+            "Karnataka"
+        ]
+    },
+    {
+        "id": "tomato_leaf_curl",
+        "disease_name": "Tomato Leaf Curl Virus (ToLCV)",
+        "scientific_name": "Tomato leaf curl virus (Begomovirus)",
+        "crops_affected": [
+            "Tomato"
+        ],
+        "symptoms": [
+            "Upward curling of leaves with thickening",
+            "Leaves become leathery and crinkled",
+            "Yellowing along leaf margins",
+            "Stunted plant growth with short internodes",
+            "Flower drop and reduced fruit set"
+        ],
+        "cause": "Viral infection transmitted by whitefly (Bemisia tabaci). Once infected, there is no cure — management focuses on vector control.",
+        "severity_range": "Severe",
+        "organic_treatment": [
+            "Remove infected plants immediately and destroy",
+            "Spray neem oil (5ml/L) to repel whiteflies",
+            "Install yellow sticky traps around the field",
+            "Release natural predators (Encarsia formosa)"
+        ],
+        "chemical_treatment": [
+            "Imidacloprid 17.8% SL @ 0.3ml/L (for whitefly control)",
+            "Thiamethoxam 25% WG @ 0.3g/L",
+            "Acetamiprid 20% SP @ 0.2g/L"
+        ],
+        "prevention": [
+            "Use ToLCV-resistant varieties (Arka Rakshak, Arka Ananya)",
+            "Raise seedlings under insect-proof net house",
+            "Avoid planting near old infected tomato fields",
+            "Control whitefly population from seedling stage",
+            "Use reflective silver mulch to repel whiteflies"
+        ],
+        "common_regions": [
+            "All tomato-growing states",
+            "Karnataka",
+            "Maharashtra",
+            "Gujarat",
+            "Rajasthan"
+        ]
+    },
+    {
+        "id": "cotton_bollworm",
+        "disease_name": "Cotton Bollworm",
+        "scientific_name": "Helicoverpa armigera",
+        "crops_affected": [
+            "Cotton",
+            "Chickpea",
+            "Tomato",
+            "Pigeon Pea"
+        ],
+        "symptoms": [
+            "Bore holes in squares, flowers, and bolls",
+            "Larval frass (excrement) visible near bore holes",
+            "Damaged bolls do not open properly",
+            "Shedding of squares and young bolls"
+        ],
+        "cause": "Lepidopteran pest Helicoverpa armigera. Polyphagous pest with multiple generations per season. Larvae bore into reproductive structures.",
+        "severity_range": "Severe",
+        "organic_treatment": [
+            "Install pheromone traps (Helilure) @ 5/ha for monitoring",
+            "Release Trichogramma egg parasitoids @ 1.5 lakh/ha",
+            "Spray HaNPV (nuclear polyhedrosis virus) @ 250 LE/ha",
+            "Apply neem seed kernel extract (NSKE) 5%"
+        ],
+        "chemical_treatment": [
+            "Emamectin benzoate 5% SG @ 0.4g/L",
+            "Chlorantraniliprole 18.5% SC @ 0.3ml/L",
+            "Indoxacarb 14.5% SC @ 0.5ml/L"
+        ],
+        "prevention": [
+            "Grow Bt cotton varieties where permitted",
+            "Practice trap cropping (marigold, castor) around cotton fields",
+            "Deep plough after harvest to destroy pupae",
+            "Avoid mono-cropping of cotton"
+        ],
+        "common_regions": [
+            "Gujarat",
+            "Maharashtra",
+            "Telangana",
+            "Andhra Pradesh",
+            "Punjab",
+            "Haryana"
+        ]
+    },
+    {
+        "id": "cotton_fusarium_wilt",
+        "disease_name": "Fusarium Wilt of Cotton",
+        "scientific_name": "Fusarium oxysporum f. sp. vasinfectum",
+        "crops_affected": [
+            "Cotton"
+        ],
+        "symptoms": [
+            "Yellowing and wilting of leaves, usually on one side of plant",
+            "Brown discoloration of vascular tissue (visible on cutting stem)",
+            "Drooping of leaves even with adequate moisture",
+            "Stunted growth and premature death of plant"
+        ],
+        "cause": "Soil-borne fungal pathogen Fusarium oxysporum. Persists in soil for many years. Favored by light sandy soils and root-knot nematode infestation.",
+        "severity_range": "Severe",
+        "organic_treatment": [
+            "Apply Trichoderma viride @ 4g/kg seed treatment",
+            "Add neem cake @ 250kg/ha to soil",
+            "Apply farm yard manure (FYM) @ 10 tons/ha",
+            "Soil solarization during summer months"
+        ],
+        "chemical_treatment": [
+            "Carbendazim 50% WP @ 2g/L as soil drench",
+            "Thiophanate methyl 70% WP @ 1g/L"
+        ],
+        "prevention": [
+            "Use wilt-resistant cotton varieties",
+            "Practice long crop rotation (4-5 years) with cereals",
+            "Manage root-knot nematodes",
+            "Avoid overwatering and waterlogging",
+            "Uproot and burn wilted plants"
+        ],
+        "common_regions": [
+            "Gujarat",
+            "Maharashtra",
+            "Karnataka",
+            "Madhya Pradesh"
+        ]
+    },
+    {
+        "id": "potato_late_blight",
+        "disease_name": "Potato Late Blight",
+        "scientific_name": "Phytophthora infestans",
+        "crops_affected": [
+            "Potato"
+        ],
+        "symptoms": [
+            "Dark brown to black water-soaked lesions on leaves starting from tips/margins",
+            "White fungal growth on lower leaf surface",
+            "Rapid defoliation in severe cases",
+            "Brown, firm rot on tubers extending inward"
+        ],
+        "cause": "Oomycete Phytophthora infestans. Most destructive potato disease worldwide. Thrives in cool, wet weather (10-20°C).",
+        "severity_range": "Severe — URGENT",
+        "organic_treatment": [
+            "Apply Bordeaux mixture 1% as preventive spray",
+            "Remove and destroy all infected plant debris",
+            "Hill up soil around plants to protect tubers",
+            "Use Trichoderma viride as soil treatment"
+        ],
+        "chemical_treatment": [
+            "Metalaxyl + Mancozeb (Ridomil MZ) @ 2.5g/L",
+            "Cymoxanil + Mancozeb @ 3g/L",
+            "Fenamidone + Mancozeb @ 3g/L"
+        ],
+        "prevention": [
+            "Use certified disease-free seed tubers",
+            "Plant resistant varieties (Kufri Jyoti, Kufri Girdhari)",
+            "Avoid irrigation during foggy/cloudy weather",
+            "Destroy volunteer potato plants",
+            "Start preventive sprays from 30 days after planting"
+        ],
+        "common_regions": [
+            "Uttar Pradesh",
+            "West Bengal",
+            "Punjab",
+            "Himachal Pradesh",
+            "Uttarakhand"
+        ]
+    },
+    {
+        "id": "chilli_anthracnose",
+        "disease_name": "Chilli Anthracnose (Fruit Rot)",
+        "scientific_name": "Colletotrichum capsici",
+        "crops_affected": [
+            "Chilli",
+            "Capsicum",
+            "Bell Pepper"
+        ],
+        "symptoms": [
+            "Sunken circular spots on fruits with concentric rings",
+            "Spots turn dark brown to black",
+            "Salmon-colored spore masses in center of spots",
+            "Fruits shrivel and dry up (mummified)"
+        ],
+        "cause": "Fungal pathogen Colletotrichum capsici. Seed-borne and survives on crop debris. Spread by rain splash. Favored by warm humid weather.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Treat seeds with Trichoderma viride @ 4g/kg",
+            "Remove and destroy infected fruits promptly",
+            "Spray Pseudomonas fluorescens @ 5g/L",
+            "Apply neem oil (5ml/L) as preventive"
+        ],
+        "chemical_treatment": [
+            "Mancozeb 75% WP @ 2.5g/L",
+            "Carbendazim 50% WP @ 1g/L",
+            "Azoxystrobin 23% SC @ 1ml/L"
+        ],
+        "prevention": [
+            "Use disease-free certified seeds",
+            "Practice crop rotation for 2-3 years",
+            "Avoid overhead irrigation",
+            "Maintain proper plant spacing",
+            "Harvest fruits at right maturity"
+        ],
+        "common_regions": [
+            "Andhra Pradesh",
+            "Telangana",
+            "Karnataka",
+            "Tamil Nadu",
+            "Maharashtra"
+        ]
+    },
+    {
+        "id": "mango_anthracnose",
+        "disease_name": "Mango Anthracnose",
+        "scientific_name": "Colletotrichum gloeosporioides",
+        "crops_affected": [
+            "Mango"
+        ],
+        "symptoms": [
+            "Black irregular spots on leaves, flowers, and fruits",
+            "Blossom blight causing flower drop",
+            "Dark sunken lesions on ripe fruits",
+            "Twig dieback from tip downward"
+        ],
+        "cause": "Fungal pathogen Colletotrichum gloeosporioides. Spread by rain and wind during flowering. Favored by warm (25-30°C) and humid conditions.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Prune and destroy infected twigs and branches",
+            "Spray Bordeaux mixture 1% before flowering",
+            "Apply neem oil (5ml/L) at panicle emergence",
+            "Dip harvested fruits in hot water (52°C for 5 min)"
+        ],
+        "chemical_treatment": [
+            "Carbendazim 50% WP @ 1g/L",
+            "Thiophanate methyl 70% WP @ 1g/L",
+            "Copper oxychloride 50% WP @ 3g/L (pre-bloom)"
+        ],
+        "prevention": [
+            "Prune trees for good air circulation and sunlight penetration",
+            "Remove fallen leaves and fruit from orchard floor",
+            "Apply preventive spray at bud burst and flowering stages",
+            "Avoid overhead sprinkler irrigation"
+        ],
+        "common_regions": [
+            "All mango-growing states",
+            "Uttar Pradesh",
+            "Maharashtra",
+            "Andhra Pradesh",
+            "Gujarat",
+            "Karnataka"
+        ]
+    },
+    {
+        "id": "powdery_mildew",
+        "disease_name": "Powdery Mildew",
+        "scientific_name": "Erysiphe spp. / Oidium spp.",
+        "crops_affected": [
+            "Mango",
+            "Grapes",
+            "Pea",
+            "Wheat",
+            "Cucurbits",
+            "Okra",
+            "Rose"
+        ],
+        "symptoms": [
+            "White powdery fungal coating on upper leaf surface",
+            "Powdery patches may spread to stems, flowers, and fruits",
+            "Affected leaves curl upward and may drop prematurely",
+            "Reduced photosynthesis leading to poor growth"
+        ],
+        "cause": "Obligate fungal parasites (Erysiphe, Oidium species). Unlike most fungi, thrives in DRY warm conditions (20-28°C) with moderate humidity.",
+        "severity_range": "Mild to Moderate",
+        "organic_treatment": [
+            "Spray milk solution (1 part milk : 9 parts water)",
+            "Apply sulfur-based organic fungicide (wettable sulfur 3g/L)",
+            "Spray neem oil (5ml/L) at early infection",
+            "Remove severely infected plant parts"
+        ],
+        "chemical_treatment": [
+            "Wettable Sulfur 80% WP @ 3g/L",
+            "Hexaconazole 5% SC @ 1ml/L",
+            "Dinocap 48% EC @ 1ml/L"
+        ],
+        "prevention": [
+            "Ensure adequate spacing for air movement",
+            "Avoid excessive nitrogen fertilization",
+            "Grow resistant varieties where available",
+            "Monitor crops during dry, warm weather"
+        ],
+        "common_regions": [
+            "All states — common across India"
+        ]
+    },
+    {
+        "id": "downy_mildew",
+        "disease_name": "Downy Mildew",
+        "scientific_name": "Peronospora / Pseudoperonospora spp.",
+        "crops_affected": [
+            "Grapes",
+            "Cucurbits",
+            "Maize",
+            "Pearl Millet",
+            "Mustard",
+            "Onion"
+        ],
+        "symptoms": [
+            "Yellow angular patches on upper leaf surface (between veins)",
+            "Grey-purple fuzzy growth on lower leaf surface",
+            "Leaves curl, brown, and die from edges",
+            "In grapes: brown patches on berries and shoot tips"
+        ],
+        "cause": "Oomycete pathogens (Peronospora, Pseudoperonospora, Sclerospora). Spread by wind and water splash. Thrives in cool (15-22°C), WET conditions with prolonged leaf wetness.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Remove and destroy infected leaves and plant parts",
+            "Apply Bordeaux mixture 1% as preventive spray",
+            "Improve air circulation by proper spacing and pruning",
+            "Avoid evening irrigation"
+        ],
+        "chemical_treatment": [
+            "Metalaxyl + Mancozeb @ 2.5g/L",
+            "Fosetyl-Al 80% WP @ 2g/L",
+            "Cymoxanil + Mancozeb @ 3g/L"
+        ],
+        "prevention": [
+            "Use resistant varieties",
+            "Avoid overhead irrigation",
+            "Ensure good drainage",
+            "Remove and destroy crop debris after harvest",
+            "Apply preventive sprays during wet weather"
+        ],
+        "common_regions": [
+            "Maharashtra",
+            "Karnataka",
+            "Tamil Nadu",
+            "Rajasthan",
+            "Gujarat"
+        ]
+    },
+    {
+        "id": "cercospora_leaf_spot",
+        "disease_name": "Cercospora Leaf Spot",
+        "scientific_name": "Cercospora spp.",
+        "crops_affected": [
+            "Beetroot",
+            "Spinach",
+            "Soybean",
+            "Rice",
+            "Groundnut",
+            "Sesame"
+        ],
+        "symptoms": [
+            "Small circular spots with grey-white center and dark brown-purple border",
+            "Spots may have yellow halo",
+            "Multiple spots merge causing large dead areas",
+            "Severe defoliation in heavy infections"
+        ],
+        "cause": "Fungal pathogen Cercospora species. Survives on crop residues. Spread by wind-borne spores and rain splash. Favored by warm (25-35°C), humid weather.",
+        "severity_range": "Mild to Moderate",
+        "organic_treatment": [
+            "Remove and destroy infected leaves",
+            "Apply Trichoderma viride @ 4g/L as foliar spray",
+            "Spray neem oil (5ml/L) preventively",
+            "Practice mulching to reduce soil splash"
+        ],
+        "chemical_treatment": [
+            "Mancozeb 75% WP @ 2.5g/L",
+            "Carbendazim 50% WP @ 1g/L",
+            "Chlorothalonil 75% WP @ 2g/L"
+        ],
+        "prevention": [
+            "Practice crop rotation with non-host crops",
+            "Use disease-free seeds",
+            "Avoid overhead irrigation",
+            "Remove crop debris after harvest"
+        ],
+        "common_regions": [
+            "All states"
+        ]
+    },
+    {
+        "id": "bacterial_wilt",
+        "disease_name": "Bacterial Wilt",
+        "scientific_name": "Ralstonia solanacearum",
+        "crops_affected": [
+            "Tomato",
+            "Brinjal",
+            "Chilli",
+            "Potato",
+            "Ginger",
+            "Banana"
+        ],
+        "symptoms": [
+            "Sudden permanent wilting of entire plant or branches",
+            "No yellowing before wilting (green wilt)",
+            "Brown discoloration of vascular tissue inside stem",
+            "Bacterial ooze test: cut stem placed in water shows milky bacterial stream"
+        ],
+        "cause": "Soil-borne bacterium Ralstonia solanacearum. Enters through roots and wounds. Favored by warm (28-35°C) and waterlogged soils. Very persistent in soil.",
+        "severity_range": "Severe",
+        "organic_treatment": [
+            "Remove and burn all infected plants immediately",
+            "Apply Pseudomonas fluorescens @ 10g/L as soil drench",
+            "Add neem cake @ 250kg/ha to soil",
+            "Soil solarization in summer (cover with transparent plastic for 45 days)"
+        ],
+        "chemical_treatment": [
+            "Streptocycline @ 0.5g/L + Copper oxychloride 3g/L as soil drench",
+            "Bleaching powder @ 10g/m² in soil"
+        ],
+        "prevention": [
+            "Practice long crop rotation (5-6 years) with paddy or cereals",
+            "Avoid waterlogging and ensure proper drainage",
+            "Use resistant rootstocks for grafting",
+            "Avoid injury to roots during weeding",
+            "Solarize nursery beds before seedling production"
+        ],
+        "common_regions": [
+            "All states",
+            "Karnataka",
+            "Kerala",
+            "West Bengal",
+            "Jharkhand"
+        ]
+    },
+    {
+        "id": "leaf_miner",
+        "disease_name": "Leaf Miner",
+        "scientific_name": "Liriomyza spp.",
+        "crops_affected": [
+            "Tomato",
+            "Beans",
+            "Pea",
+            "Cucumber",
+            "Brinjal",
+            "Okra"
+        ],
+        "symptoms": [
+            "Irregular white or pale serpentine mines (tunnels) on leaf surface",
+            "Mines created by larvae feeding between leaf layers",
+            "Heavily mined leaves dry up and fall",
+            "Small black puncture marks on upper leaf surface (feeding/egg-laying sites)"
+        ],
+        "cause": "Dipteran flies (Liriomyza species). Female flies puncture leaves for feeding and laying eggs. Larvae mine through leaf tissue between upper and lower epidermis.",
+        "severity_range": "Mild to Moderate",
+        "organic_treatment": [
+            "Install yellow sticky traps to catch adult flies",
+            "Spray neem oil (5ml/L) to deter egg-laying",
+            "Remove and destroy heavily mined leaves",
+            "Encourage natural enemies (parasitic wasps)"
+        ],
+        "chemical_treatment": [
+            "Cyromazine 75% WP @ 0.3g/L (insect growth regulator)",
+            "Abamectin 1.8% EC @ 0.5ml/L",
+            "Spinosad 45% SC @ 0.3ml/L"
+        ],
+        "prevention": [
+            "Use insect-proof netting in nurseries",
+            "Monitor with yellow sticky traps",
+            "Practice crop rotation",
+            "Remove weeds that serve as alternate hosts"
+        ],
+        "common_regions": [
+            "All states"
+        ]
+    },
+    {
+        "id": "rust_general",
+        "disease_name": "Rust",
+        "scientific_name": "Puccinia / Uromyces spp.",
+        "crops_affected": [
+            "Wheat",
+            "Soybean",
+            "Groundnut",
+            "Beans",
+            "Coffee",
+            "Sugarcane"
+        ],
+        "symptoms": [
+            "Orange-brown to reddish-brown raised pustules on leaf surfaces",
+            "Pustules release powdery orange spores when rubbed",
+            "Severe infection causes leaf yellowing and premature drying",
+            "Reduced grain/fruit quality and yield"
+        ],
+        "cause": "Obligate fungal parasites (Puccinia, Uromyces species). Wind-dispersed spores can travel long distances. Favored by moderate temperatures and high humidity.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Remove infected plant debris",
+            "Apply sulfur-based sprays (wettable sulfur 3g/L)",
+            "Spray neem oil as early preventive",
+            "Practice mixed cropping to reduce spread"
+        ],
+        "chemical_treatment": [
+            "Propiconazole 25% EC @ 1ml/L",
+            "Tebuconazole 25% WG @ 1g/L",
+            "Mancozeb 75% WP @ 2.5g/L"
+        ],
+        "prevention": [
+            "Grow rust-resistant varieties",
+            "Sow at recommended time (avoid late sowing)",
+            "Destroy volunteer and alternate host plants",
+            "Monitor regularly and spray at first sign of pustules"
+        ],
+        "common_regions": [
+            "All states"
+        ]
+    },
+    {
+        "id": "mosaic_virus",
+        "disease_name": "Mosaic Virus Disease",
+        "scientific_name": "Various (TMV, CMV, BYMV, etc.)",
+        "crops_affected": [
+            "Tomato",
+            "Chilli",
+            "Cucumber",
+            "Papaya",
+            "Tobacco",
+            "Beans"
+        ],
+        "symptoms": [
+            "Irregular light green and dark green mosaic pattern on leaves",
+            "Leaf curling, puckering, or distortion",
+            "Stunted plant growth",
+            "Mottled or deformed fruits with reduced quality"
+        ],
+        "cause": "Various viruses (Tobacco Mosaic Virus, Cucumber Mosaic Virus, etc.). Spread by aphids, whiteflies, contaminated tools, or seed. No cure once infected.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Remove and destroy infected plants immediately",
+            "Control aphid/whitefly vectors with neem oil (5ml/L)",
+            "Use reflective mulch to repel vectors",
+            "Wash hands and tools with milk solution between plants"
+        ],
+        "chemical_treatment": [
+            "Imidacloprid 17.8% SL @ 0.3ml/L (vector control)",
+            "Thiamethoxam 25% WG @ 0.3g/L (vector control)",
+            "No direct chemical cure for the virus itself"
+        ],
+        "prevention": [
+            "Use virus-free certified seeds/seedlings",
+            "Control insect vectors from seedling stage",
+            "Disinfect tools with 10% bleach solution",
+            "Avoid tobacco use near susceptible crops (TMV)",
+            "Grow resistant varieties where available"
+        ],
+        "common_regions": [
+            "All states"
+        ]
+    },
+    {
+        "id": "root_knot_nematode",
+        "disease_name": "Root Knot Nematode",
+        "scientific_name": "Meloidogyne incognita",
+        "crops_affected": [
+            "Tomato",
+            "Brinjal",
+            "Okra",
+            "Cucumber",
+            "Carrot",
+            "Ginger"
+        ],
+        "symptoms": [
+            "Galls (knots/swellings) on roots of varying sizes",
+            "Stunted growth and yellowing of plants",
+            "Wilting during mid-day despite adequate moisture",
+            "Poor root development and reduced yield"
+        ],
+        "cause": "Soil-borne nematode Meloidogyne incognita. Penetrates roots and induces gall formation. Favored by sandy, warm soils. Often complicated by secondary fungal infections.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Apply neem cake @ 250kg/ha in soil before planting",
+            "Use Paecilomyces lilacinus @ 5kg/ha as biocontrol",
+            "Grow marigold (Tagetes) as trap crop or intercrop",
+            "Apply Trichoderma viride @ 5kg/ha in soil"
+        ],
+        "chemical_treatment": [
+            "Carbofuran 3G @ 1kg a.i./ha in soil",
+            "Phorate 10G @ 1kg a.i./ha"
+        ],
+        "prevention": [
+            "Practice crop rotation with cereals, mustard, or marigold",
+            "Deep summer ploughing to expose nematodes to sun",
+            "Soil solarization during summer",
+            "Use nematode-free planting material",
+            "Avoid continuous cultivation of susceptible crops"
+        ],
+        "common_regions": [
+            "All states — widespread in India"
+        ]
+    },
+    {
+        "id": "citrus_canker",
+        "disease_name": "Citrus Canker",
+        "scientific_name": "Xanthomonas citri subsp. citri",
+        "crops_affected": [
+            "Lemon",
+            "Orange",
+            "Sweet Lime",
+            "Grapefruit",
+            "Citrus"
+        ],
+        "symptoms": [
+            "Raised brown corky lesions on leaves, stems, and fruits",
+            "Lesions have water-soaked margin and yellow halo",
+            "Severely affected leaves drop prematurely",
+            "Fruits with canker spots have reduced market value"
+        ],
+        "cause": "Bacterial pathogen Xanthomonas citri. Spread by wind-driven rain, contaminated tools, and infected planting material. Enters through stomata and wounds.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Prune and destroy infected branches (disinfect tools after each cut)",
+            "Spray Bordeaux mixture 1% as preventive",
+            "Apply copper-based organic sprays",
+            "Maintain tree vigor through balanced nutrition"
+        ],
+        "chemical_treatment": [
+            "Copper oxychloride 50% WP @ 3g/L",
+            "Streptomycin sulfate @ 0.5g/L + Copper oxychloride 3g/L",
+            "Copper hydroxide 77% WP @ 2g/L"
+        ],
+        "prevention": [
+            "Use canker-free certified nursery plants",
+            "Windbreaks around orchards to reduce wind-driven rain",
+            "Avoid working in orchards when foliage is wet",
+            "Disinfect pruning tools with bleach solution",
+            "Apply preventive copper sprays before monsoon"
+        ],
+        "common_regions": [
+            "Maharashtra",
+            "Andhra Pradesh",
+            "Punjab",
+            "Rajasthan",
+            "Gujarat",
+            "Karnataka"
+        ]
+    },
+    {
+        "id": "blight_mustard",
+        "disease_name": "Alternaria Blight of Mustard",
+        "scientific_name": "Alternaria brassicae",
+        "crops_affected": [
+            "Mustard",
+            "Rapeseed",
+            "Cabbage",
+            "Cauliflower"
+        ],
+        "symptoms": [
+            "Dark brown circular spots with concentric rings on leaves",
+            "Spots enlarge and coalesce causing premature defoliation",
+            "Dark streaks on stems and pods",
+            "Seeds become shriveled and discolored"
+        ],
+        "cause": "Fungal pathogen Alternaria brassicae. Seed-borne and survives on crop debris. Favored by cool (18-25°C), humid weather with intermittent rainfall.",
+        "severity_range": "Moderate to Severe",
+        "organic_treatment": [
+            "Treat seeds with Trichoderma viride @ 4g/kg",
+            "Spray neem oil (5ml/L) at early infection",
+            "Remove lower infected leaves",
+            "Apply bio-agents as foliar spray"
+        ],
+        "chemical_treatment": [
+            "Mancozeb 75% WP @ 2.5g/L",
+            "Iprodione 50% WP @ 2g/L",
+            "Propiconazole 25% EC @ 1ml/L"
+        ],
+        "prevention": [
+            "Use Alternaria-tolerant varieties",
+            "Practice 2-3 year crop rotation",
+            "Clean cultivation and removal of crop residues",
+            "Timely sowing to avoid peak infection period"
+        ],
+        "common_regions": [
+            "Rajasthan",
+            "Madhya Pradesh",
+            "Uttar Pradesh",
+            "Haryana",
+            "Punjab"
+        ]
+    },
+    {
+        "id": "sugarcane_red_rot",
+        "disease_name": "Red Rot of Sugarcane",
+        "scientific_name": "Colletotrichum falcatum",
+        "crops_affected": [
+            "Sugarcane"
+        ],
+        "symptoms": [
+            "Reddening of internal cane tissue with white transverse patches",
+            "Withering and drying of third and fourth leaf from top",
+            "Discoloration at nodes visible when cane is split",
+            "Foul alcoholic smell from infected cane"
+        ],
+        "cause": "Fungal pathogen Colletotrichum falcatum. Enters through sett buds and grows internally. Favored by waterlogged conditions and warm (28-32°C) weather.",
+        "severity_range": "Severe",
+        "organic_treatment": [
+            "Treat setts with Trichoderma viride @ 4g/kg before planting",
+            "Soak setts in Carbendazim 0.1% solution for 30 minutes",
+            "Remove and destroy infected clumps immediately",
+            "Practice field sanitation"
+        ],
+        "chemical_treatment": [
+            "Carbendazim 50% WP @ 0.1% (sett treatment)",
+            "Thiophanate methyl 70% WP sett soak"
+        ],
+        "prevention": [
+            "Use red rot-resistant varieties (Co 0238, CoLk 94184)",
+            "Plant healthy, disease-free setts",
+            "Practice crop rotation with rice or legumes",
+            "Ensure proper drainage to avoid waterlogging",
+            "Remove ratoon crops from infected fields"
+        ],
+        "common_regions": [
+            "Uttar Pradesh",
+            "Maharashtra",
+            "Karnataka",
+            "Tamil Nadu",
+            "Punjab"
+        ]
+    },
+    {
+        "id": "groundnut_tikka",
+        "disease_name": "Tikka Disease (Leaf Spot)",
+        "scientific_name": "Cercosporidium personatum / Cercospora arachidicola",
+        "crops_affected": [
+            "Groundnut",
+            "Peanut"
+        ],
+        "symptoms": [
+            "Small dark brown to black circular spots on leaves",
+            "Spots may have yellow halo",
+            "Heavy spotting causes premature defoliation",
+            "Early defoliation leads to immature pod development"
+        ],
+        "cause": "Fungal pathogens (late leaf spot: Cercosporidium personatum, early leaf spot: Cercospora arachidicola). Spread by wind and rain splash.",
+        "severity_range": "Moderate",
+        "organic_treatment": [
+            "Apply neem oil (5ml/L) at early stage",
+            "Spray Trichoderma viride @ 4g/L",
+            "Remove heavily infected leaves",
+            "Apply organic sulfur sprays"
+        ],
+        "chemical_treatment": [
+            "Mancozeb 75% WP @ 2.5g/L",
+            "Chlorothalonil 75% WP @ 2g/L",
+            "Carbendazim 50% WP @ 1g/L"
+        ],
+        "prevention": [
+            "Use resistant groundnut varieties",
+            "Practice crop rotation with cereals",
+            "Ensure balanced fertilization",
+            "Remove crop debris after harvest",
+            "Sow at recommended time"
+        ],
+        "common_regions": [
+            "Gujarat",
+            "Andhra Pradesh",
+            "Tamil Nadu",
+            "Karnataka",
+            "Rajasthan"
+        ]
+    },
+    {
+        "id": "banana_panama_wilt",
+        "disease_name": "Panama Wilt (Fusarium Wilt of Banana)",
+        "scientific_name": "Fusarium oxysporum f. sp. cubense",
+        "crops_affected": [
+            "Banana"
+        ],
+        "symptoms": [
+            "Yellowing of older leaves starting from margin",
+            "Leaves droop and hang around pseudostem ('skirt' appearance)",
+            "Splitting of pseudostem base",
+            "Brown/reddish discoloration of vascular tissue in pseudostem cross-section"
+        ],
+        "cause": "Soil-borne fungus Fusarium oxysporum f. sp. cubense. Persists in soil for decades. Spread through infected planting material, soil, and water.",
+        "severity_range": "Severe — No cure once infected",
+        "organic_treatment": [
+            "Remove and destroy entire infected plant including rhizome",
+            "Apply Trichoderma viride @ 50g/plant in soil",
+            "Drench surrounding area with Pseudomonas fluorescens",
+            "Apply neem cake @ 1kg/pit around plant base"
+        ],
+        "chemical_treatment": [
+            "Carbendazim 50% WP @ 2g/L as soil drench (limited effectiveness)",
+            "No effective chemical control — focus on prevention"
+        ],
+        "prevention": [
+            "Use disease-free tissue culture plants",
+            "Use resistant varieties (Grand Naine is moderately resistant)",
+            "Practice crop rotation for 3-5 years with paddy",
+            "Avoid waterlogging and ensure proper drainage",
+            "Disinfect farm implements between fields"
+        ],
+        "common_regions": [
+            "Tamil Nadu",
+            "Maharashtra",
+            "Gujarat",
+            "Andhra Pradesh",
+            "Karnataka",
+            "Bihar"
+        ]
+    }
+]
