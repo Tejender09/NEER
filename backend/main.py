@@ -1,6 +1,15 @@
 import os
+import sys
 import json
 import time
+
+# Force UTF-8 encoding for standard output and error to prevent charmap encoding issues on Windows
+import codecs
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+if sys.stderr.encoding.lower() != 'utf-8':
+    sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
+
 import asyncio
 import uuid
 from datetime import datetime
@@ -13,24 +22,18 @@ from pydantic import BaseModel
 import shutil
 from google import genai
 from google.genai import types as genai_types
+from typing import List, Dict, Any, Union
 
 load_dotenv()
 
-from supabase import create_client, Client
+import local_db  # Using local file DB instead of Supabase
 
 # ============================================================
-# INITIALIZE SUPABASE
+# INITIALIZE DATABASE
 # ============================================================
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+# We use local JSON files now instead of Supabase.
+supabase = None
 
-if SUPABASE_URL and SUPABASE_KEY:
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-else:
-    print("WARNING: Supabase credentials missing. Database operations will fail.")
-    supabase = None
-
-# Setup FastAPI App
 app = FastAPI(title="NEER — Farmer AI Assistant API")
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
@@ -245,10 +248,7 @@ class FarmAdvisorRequest(BaseModel):
 
 @app.post("/auth/sync")
 async def sync_user_endpoint(request: dict):
-    """Sync user after Supabase Auth (OTP or Google)."""
-    if not supabase:
-        raise HTTPException(status_code=500, detail="Database disabled")
-
+    """Sync user after Auth (OTP or Google)."""
     user_id = request.get("user_id")
     email = request.get("email")
     phone = request.get("phone")
@@ -260,16 +260,15 @@ async def sync_user_endpoint(request: dict):
 
     now_str = datetime.utcnow().isoformat() + "Z"
 
-    # Check if user exists in public.users
-    res = supabase.table("users").select("*").eq("id", user_id).execute()
-    users = res.data
+    # Check if user exists in local_db
+    existing_user = local_db.get_by_id("users", user_id)
 
-    if users and len(users) > 0:
+    if existing_user:
         # Update last login
-        supabase.table("users").update({
+        updated = local_db.update_by_id("users", user_id, {
             "last_login": now_str
-        }).eq("id", user_id).execute()
-        return users[0]
+        })
+        return updated or existing_user
     else:
         # Create new profile record
         new_user = {
@@ -279,16 +278,18 @@ async def sync_user_endpoint(request: dict):
             "language": lang,
             "profile_complete": False,
             "joined_at": now_str,
-            "last_login": now_str
+            "last_login": now_str,
+            "state": "",
+            "district": "",
+            "village": "",
+            "primary_crop": "",
+            "land_size": 0.0
         }
-        res = supabase.table("users").insert(new_user).execute()
-        return res.data[0] if res.data else new_user
+        res = local_db.insert("users", new_user)
+        return res
 
 @app.patch("/user/profile")
 async def update_profile_endpoint(request: ProfileUpdate):
-    if not supabase:
-        raise HTTPException(status_code=500, detail="Database disabled")
-    
     now_str = datetime.utcnow().isoformat() + "Z"
     
     update_data = {
@@ -303,37 +304,131 @@ async def update_profile_endpoint(request: ProfileUpdate):
         "last_login": now_str
     }
     
-    res = supabase.table("users").update(update_data).eq("id", request.user_id).execute()
-    if res.data:
-        return res.data[0]
+    res = local_db.update_by_id("users", request.user_id, update_data)
+    if res:
+        return res
     raise HTTPException(status_code=404, detail="User not found")
 
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
-    context_info = f"\nRELEVANT CONTEXT (User was just looking at these schemes):\n{request.context}" if request.context else ""
+    """
+    NEER Smart Orchestrator — Using Gemini Function Calling to use farming tools.
+    """
+    context_info = f"\nRELEVANT CONTEXT (User was just looking at these items/schemes):\n{request.context}" if request.context else ""
+    
+    # Tool definitions for Gemini
+    tools = [
+        {
+            "function_declarations": [
+                {
+                    "name": "get_weather_update",
+                    "description": "Get live weather, farming alerts, and AI advisory for a specific city and state in India.",
+                    "parameters": {
+                        "type": "OBJECT",
+                        "properties": {
+                            "city": {"type": "STRING", "description": "The name of the city/district (e.g., 'Jodhpur')."},
+                            "state": {"type": "STRING", "description": "The name of the Indian state (e.g., 'Rajasthan')."},
+                            "lang": {"type": "STRING", "description": "The language for the response ('English' or 'Hindi').", "default": "English"},
+                            "crop_type": {"type": "STRING", "description": "Optional crop type to get specific advice for."}
+                        },
+                        "required": ["city", "state"]
+                    }
+                },
+                {
+                    "name": "find_government_schemes",
+                    "description": "Find and rank relevant Indian government agricultural schemes (PM-Kisan, KCC, etc.) based on location and land size.",
+                    "parameters": {
+                        "type": "OBJECT",
+                        "properties": {
+                            "state": {"type": "STRING", "description": "The Indian state (e.g., 'Punjab')."},
+                            "land_size": {"type": "NUMBER", "description": "The farmer's land size in acres (e.g., 5.5)."},
+                            "lang": {"type": "STRING", "description": "The language for the response ('English' or 'Hindi').", "default": "English"},
+                            "crop_context": {"type": "STRING", "description": "Optional context about current crops or health."}
+                        },
+                        "required": ["state", "land_size"]
+                    }
+                }
+            ]
+        }
+    ]
 
-    prompt = f"""
-    You are 'NEER', a highly professional, polite, and direct agricultural consultant. 
-    Your goal is to provide concise, expert-level advice while maintaining a human connection.
+    system_instruction = f"""
+    You are 'NEER', a highly professional, polite, and direct agricultural consultant for Indian farmers.
+    Your goal is to provide concise, expert-level advice. Use the provided tools (weather, schemes) when the user's query relates to them.
     {context_info}
     
     GUIDELINES:
     1. STYLE: Be extremely concise. Use bullet points for steps or lists.
-    2. TONE: Professional, efficient, and respectful. Remove all conversational filler.
-    3. HYPERLINKS: If you mention an official website/portal, ALWAYS format it as a markdown link: [Portal Name](url).
+    2. TONE: Professional, efficient, and respectful.
+    3. HYPERLINKS: Format official websites as markdown links: [Portal Name](url).
     4. LANGUAGE: Respond ONLY in the language the user uses.
-    5. NO BULK TEXT: Break information into small, readable chunks.
-    6. FOCUS: Concrete, actionable advice for farmers.
-
-    USER QUERY: {request.message}
+    5. FOCUS: Concrete, actionable advice.
     """
+
     try:
-        result = gemini_generate_text(prompt)
-        return {"response": result}
+        # We'll use a standard chat-like flow with function calling
+        # For simplicity in this cascading setup, we'll implement a manual loop or use the SDK's higher-level features if stable
+        # Here we manually handle the call to maintain our cascading model logic
+        
+        def run_orchestrated_task(model_id):
+            chat = gemini_client.chats.create(
+                model=model_id,
+                config=genai_types.GenerateContentConfig(
+                    system_instruction=system_instruction,
+                    tools=tools
+                )
+            )
+            
+            response = chat.send_message(request.message)
+            
+            # Check for function calls
+            if response.candidates[0].content.parts:
+                for part in response.candidates[0].content.parts:
+                    if part.function_call:
+                        call = part.function_call
+                        res_data = {}
+                        
+                        if call.name == "get_weather_update":
+                            res_data = weather_scout.get_weather(**call.args)
+                        elif call.name == "find_government_schemes":
+                            # Adapter for land_size type and crop_context
+                            args = dict(call.args)
+                            if isinstance(args.get("crop_context"), str):
+                                args["crop_context"] = {"summary": args["crop_context"]}
+                            res_data = scheme_navigator.find_schemes(**args)
+                        
+                        # Send the tool result back to Gemini
+                        response = chat.send_message(
+                            genai_types.Content(
+                                parts=[genai_types.Part.from_function_response(
+                                    name=call.name,
+                                    response={"result": res_data}
+                                )]
+                            )
+                        )
+            
+            return response.text.strip()
+
+        # Cascade implementation for the orchestrated task
+        last_error = None
+        for attempt in range(MAX_RETRIES + 1):
+            for model_id in GEMINI_MODELS:
+                try:
+                    return {"response": run_orchestrated_task(model_id)}
+                except Exception as e:
+                    last_error = e
+                    if _is_rate_limit_error(e):
+                        print(f"[ORCHESTRATOR] {model_id} busy. Cascading...")
+                        continue
+                    raise
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_DELAY_SEC)
+        raise last_error
+
     except Exception as e:
         if _is_rate_limit_error(e):
-            raise HTTPException(status_code=429, detail="All Gemini models are temporarily busy. Please wait 30 seconds and try again.")
-        raise HTTPException(status_code=500, detail=f"AI processing failed: {str(e)}")
+            raise HTTPException(status_code=429, detail="All Gemini models are temporarily busy.")
+        raise HTTPException(status_code=500, detail=f"Orchestration failed: {str(e)}")
 
 
 @app.post("/detect")
@@ -365,7 +460,7 @@ async def detect_endpoint(
         )
 
         # Persistence: If user_id is provided, save to history
-        if user_id and supabase and result.get("status") == "success":
+        if user_id and result.get("status") == "success":
             try:
                 # 1. Save image locally (similar to /upload) to get a URL
                 file_ext = image.filename.split('.')[-1] if '.' in image.filename else 'jpg'
@@ -378,15 +473,17 @@ async def detect_endpoint(
                 image_url = f"http://localhost:8000/uploads/{unique_filename}"
                 data = result["data"]
                 
-                # 2. Insert into Supabase history table
-                supabase.table("history").insert({
+                # 2. Insert into local history table
+                local_db.insert("history", {
+                    "id": str(uuid.uuid4()),
                     "user_id": user_id,
                     "crop_name": data.get("crop_type"),
                     "disease_name": data.get("disease_candidates")[0]["name"] if data.get("disease_candidates") else "Unknown",
                     "confidence": data.get("disease_candidates")[0]["confidence_percentage"] if data.get("disease_candidates") else 0,
                     "treatment": json.dumps(data.get("organic_treatment", []) + data.get("chemical_treatment", [])),
-                    "image_url": image_url
-                }).execute()
+                    "image_url": image_url,
+                    "timestamp": datetime.utcnow().isoformat() + "Z"
+                })
                 
                 # Add image_url to final response for frontend
                 result["image_url"] = image_url
@@ -448,31 +545,31 @@ async def weather_endpoint(request: WeatherRequest):
 
 @app.get("/history/{user_id}")
 async def get_user_history(user_id: str):
-    if not supabase: return []
-    res = supabase.table("history").select("*").eq("user_id", user_id).order("timestamp", desc=True).execute()
-    return res.data
+    data = local_db.select_by("history", "user_id", user_id)
+    # Sort descending by timestamp
+    data.sort(key=lambda x: x.get("timestamp", ""), reverse=True)
+    return data
 
 @app.get("/calendar/{user_id}")
 async def get_user_calendar(user_id: str):
-    if not supabase: return None
-    res = supabase.table("calendars").select("*").eq("user_id", user_id).execute()
-    return res.data[0] if res.data else None
+    res = local_db.select_by("calendars", "user_id", user_id)
+    return res[0] if res else None
 
 @app.post("/calendar")
 async def save_user_calendar(request: dict):
-    if not supabase: raise HTTPException(status_code=500)
     user_id = request.get("user_id")
     if not user_id: raise HTTPException(status_code=400, detail="user_id required")
     
     # Upsert the calendar
-    res = supabase.table("calendars").upsert({
+    new_record = {
         "user_id": user_id,
         "state": request.get("state"),
         "crop": request.get("crop"),
         "calendar_json": request.get("calendar"),
         "last_updated": datetime.utcnow().isoformat() + "Z"
-    }).execute()
-    return res.data[0] if res.data else {"success": True}
+    }
+    res = local_db.upsert_by("calendars", "user_id", user_id, new_record)
+    return res
 
 @app.get("/")
 def read_root():
@@ -496,42 +593,42 @@ async def upload_image(image: UploadFile = File(...)):
 
 @app.get("/community/posts")
 async def get_community_posts(type: Optional[str] = None):
-    if not supabase: return []
-    query = supabase.table("posts").select("*, comments(*)")
+    posts = local_db.select_all("posts")
+    comments = local_db.select_all("comments")
+    
+    # Filter by type if provided
     if type:
-        query = query.eq("type", type)
-    res = query.order("timestamp", desc=True).execute()
-    return res.data
+        posts = [p for p in posts if p.get("type") == type]
+        
+    # Sort by descending timestamp
+    posts.sort(key=lambda x: x.get("timestamp", ""), reverse=True)
+    
+    # Join comments manually
+    for p in posts:
+        p["comments"] = [c for c in comments if c.get("post_id") == p["id"]]
+        
+    return posts
 
 @app.post("/community/posts")
 async def create_community_post(request: CommunityPostRequest):
-    if not supabase: raise HTTPException(status_code=500, detail="DB Error")
     new_post = request.dict()
     new_post["id"] = str(uuid.uuid4())
     new_post["likes"] = 0
+    new_post["liked_by"] = []
     new_post["timestamp"] = datetime.utcnow().isoformat() + "Z"
     
-    # Supabase handles the array init as empty by default using SQL schema
-    # Remove nulls for clean payload
     clean_post = {k: v for k, v in new_post.items() if v is not None}
     
-    res = supabase.table("posts").insert(clean_post).execute()
-    if res.data:
-        inserted = res.data[0]
-        inserted["comments"] = [] # Return with empty comments array for frontend
-        return inserted
-    raise HTTPException(status_code=500, detail="Failed to create post")
+    inserted = local_db.insert("posts", clean_post)
+    inserted["comments"] = [] 
+    return inserted
 
 @app.post("/community/like")
 async def like_community_post(request: CommunityLikeRequest):
-    if not supabase: raise HTTPException(status_code=500)
-    
-    # Get current post state
-    res = supabase.table("posts").select("likes, liked_by").eq("id", request.post_id).execute()
-    if not res.data:
+    p = local_db.get_by_id("posts", request.post_id)
+    if not p:
         raise HTTPException(status_code=404, detail="Post not found")
         
-    p = res.data[0]
     liked_by = p.get("liked_by") or []
     likes = p.get("likes", 0)
 
@@ -542,12 +639,11 @@ async def like_community_post(request: CommunityLikeRequest):
         liked_by.append(request.user_id)
         likes += 1
         
-    supabase.table("posts").update({"likes": likes, "liked_by": liked_by}).eq("id", request.post_id).execute()
+    local_db.update_by_id("posts", request.post_id, {"likes": likes, "liked_by": liked_by})
     return {"success": True, "likes": likes, "liked_by": liked_by}
 
 @app.post("/community/comment")
 async def comment_community_post(request: CommunityCommentRequest):
-    if not supabase: raise HTTPException(status_code=500)
     
     new_comment = {
         "id": str(uuid.uuid4()),
@@ -557,11 +653,8 @@ async def comment_community_post(request: CommunityCommentRequest):
         "timestamp": datetime.utcnow().isoformat() + "Z"
     }
     
-    res = supabase.table("comments").insert(new_comment).execute()
-    if res.data:
-        return res.data[0]
-    raise HTTPException(status_code=500, detail="Failed to add comment")
-    raise HTTPException(status_code=404, detail="Post not found")
+    res = local_db.insert("comments", new_comment)
+    return res
 
 @app.post("/community/bid")
 async def bid_community_post(request: CommunityBidRequest):

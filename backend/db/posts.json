@@ -1,0 +1,16 @@
+[
+    {
+        "author": "Guest",
+        "location": "Local",
+        "avatar": "👨🏽‍🌾",
+        "type": "discussion",
+        "content": "idk why this happened to my crops ",
+        "image_url": "http://localhost:8000/uploads/606689b207784bdbba6f02c2009e8f1a.webp",
+        "id": "f384b410-8f19-4073-b077-b95989db52ee",
+        "likes": 1,
+        "liked_by": [
+            "guest"
+        ],
+        "timestamp": "2026-03-02T06:33:12.716801Z"
+    }
+]

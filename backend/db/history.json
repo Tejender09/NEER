@@ -1,0 +1,12 @@
+[
+    {
+        "id": "4e36b718-011a-4449-b489-01d8832452a6",
+        "user_id": "guest",
+        "crop_name": "Wheat",
+        "disease_name": "Yellow Rust (Stripe Rust)",
+        "confidence": 95,
+        "treatment": "[\"Remove volunteer wheat plants that harbor spores\", \"Apply Trichoderma viride as soil treatment\", \"Use neem-based formulations for early infection\", \"Propiconazole 25% EC @ 1ml/L water\", \"Tebuconazole 25% WG @ 1g/L water\", \"Triadimefon 25% WP @ 1g/L water\"]",
+        "image_url": "http://localhost:8000/uploads/971527a037a74f1399308138ad1a13c0.webp",
+        "timestamp": "2026-03-02T06:30:26.756454Z"
+    }
+]

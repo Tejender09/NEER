@@ -11,7 +11,6 @@ import {
     CalendarDays, Bell, BellOff, Volume2, VolumeX, Mic
 } from 'lucide-react';
 import './index.css';
-import { createClient } from '@supabase/supabase-js';
 
 // ============================================================
 //    ERROR BOUNDARY — To catch and display render crashes
@@ -40,11 +39,6 @@ class ErrorBoundary extends React.Component {
 
 
 const API = 'http://127.0.0.1:8000';
-
-const SUPABASE_URL = "https://xiukboqprhdjushvakib.supabase.co";
-const SUPABASE_KEY = "sb_publishable_C06ykG5g8zLGdWczotNW9A_gzEaXBq-";
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-
 
 /* ============================================================
    Markdown-like formatter for AI responses
@@ -577,16 +571,18 @@ function App() {
     const [notifCount, setNotifCount] = useState(0);
 
     useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            setSession(session);
-            if (session) syncUser(session);
-        });
-
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-            setSession(session);
-            if (session) syncUser(session);
-            else { setUser(null); if (page !== 'landing') setPage('landing'); }
-        });
+        // Mock Auth check
+        const storedSession = localStorage.getItem('neer_session');
+        if (storedSession) {
+            try {
+                const s = JSON.parse(storedSession);
+                setSession(s);
+                syncUser(s);
+            } catch (e) { }
+        } else {
+            setSession(null);
+            if (page !== 'landing') setPage('landing');
+        }
 
         const saved = localStorage.getItem('neer_calendar');
         if (saved) {
@@ -598,7 +594,6 @@ function App() {
                 setNotifCount((arr[idx]?.tasks?.length || 0) + (arr[next]?.tasks?.length || 0));
             } catch (e) { }
         }
-        return () => subscription.unsubscribe();
     }, []);
 
     const isSyncing = useRef(false);
@@ -653,7 +648,11 @@ function App() {
         if (!session) {
             switch (page) {
                 case 'language': return <LangPage onNext={() => go('login')} setLang={setLang} />;
-                case 'login': return <LoginPage lang={lang} onGuest={() => { setUser({ id: 'guest', name: 'Guest', profile_complete: true }); setPage('home'); }} />;
+                case 'login': return <LoginPage lang={lang} onGuest={() => { setUser({ id: 'guest', name: 'Guest', profile_complete: true }); setPage('home'); }} onLogin={(mockSession) => {
+                    localStorage.setItem('neer_session', JSON.stringify(mockSession));
+                    setSession(mockSession);
+                    syncUser(mockSession);
+                }} />;
                 default: return <LandingPage onEnter={() => go('language')} />;
             }
         }
@@ -690,7 +689,7 @@ function App() {
     );
 }
 
-function LoginPage({ lang, onGuest }) {
+function LoginPage({ lang, onGuest, onLogin }) {
     const [phone, setPhone] = useState('');
     const [otp, setOtp] = useState('');
     const [step, setStep] = useState(1);
@@ -708,32 +707,50 @@ function LoginPage({ lang, onGuest }) {
         wait: lang === 'Hindi' ? 'सत्यापित कर रहा है...' : 'Verifying...',
         or: lang === 'Hindi' ? 'या' : 'OR'
     };
-    console.log("LoginPage rendering for step:", step, "lang:", lang);
 
     const sendOtp = async () => {
         if (phone.length < 10) return;
         setLoading(true); setError('');
-        try {
-            const { error } = await supabase.auth.signInWithOtp({ phone: `+91${phone}` });
-            if (error) throw error;
+        // Mock OTP send latency
+        setTimeout(() => {
             setStep(2);
-        } catch (e) { setError(e.message); } finally { setLoading(false); }
+            setLoading(false);
+        }, 600);
     };
 
     const verifyOtp = async () => {
         if (otp.length < 6) return;
         setLoading(true); setError('');
-        try {
-            const { error } = await supabase.auth.verifyOtp({ phone: `+91${phone}`, token: otp, type: 'sms' });
-            if (error) throw error;
-        } catch (e) { setError(e.message); } finally { setLoading(false); }
+
+        // Mock OTP verify latency
+        setTimeout(() => {
+            setLoading(false);
+            const mockSession = {
+                user: {
+                    id: 'mock_user_' + phone,
+                    phone: `+91${phone}`,
+                    email: null,
+                    user_metadata: { full_name: 'Farmer Friend' }
+                }
+            };
+            onLogin(mockSession);
+        }, 800);
     };
 
     const loginWithGoogle = async () => {
         setLoading(true);
-        const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
-        if (error) setError(error.message);
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false);
+            const mockSession = {
+                user: {
+                    id: 'mock_google_user_' + Date.now(),
+                    phone: null,
+                    email: 'farmer@gmail.com',
+                    user_metadata: { full_name: 'Google Farmer' }
+                }
+            };
+            onLogin(mockSession);
+        }, 1000);
     };
 
     return (
